@@ -1,0 +1,10 @@
+Dataset: 	      num_iterations	         learning_rate	          decay_rate	        ent_vec_dim	        rel_vec_dim	    input_dropout	  feature_map_dropout      hidden_dropout	label_smoothing          batch _size
+FB15k-237:	1000		0.0005		0.999		200		200		0.5		0.3		0.6		         0.1                          128
+WN18RR:		1500		0.001		1.0		200		200		0.4		0.3		0.4		         0.1                          128
+FB15k:		500		0.0001		1.0		400		400		0.2		0.2		0.3		         0.5                          256
+WN18:		500		0.001		1.0		400		400		0.2		0.2		0.3		         0.1                          128
+YAGO3-10	800		0.001		1.0		400		400		0.2		0.2		0.3		         0.3                          256
+FB-IMG		300		0.0001		1.0		456		456		0.2		0.3		0.2		         0.1                          256
+WN9-IMG               900		0.0001		1.0		456		456		0.2		0.3		0.2		         0.1                          256
+
+		
