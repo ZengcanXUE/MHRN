@@ -23,7 +23,7 @@ GrouPy is the implementation of group equivariant convolution. We have already i
 Access GrouPy (Pytorch) at https://github.com/adambielski/GrouPy 
 
 Additionally, we have already downloaded datasets in data folder.
-https://drive.google.com/file/d/1TV92angj47IHC666GBTxhJoEtIQKUZ-N/view?usp=sharing
+Access FB-IMG, WN9-IMG, and their pretrained embeddings at https://github.com/UKPLab/starsem18-multimodalKB https://drive.google.com/file/d/1TV92angj47IHC666GBTxhJoEtIQKUZ-N/view?usp=sharing
 	
 
 ### Acknowledgment: 
