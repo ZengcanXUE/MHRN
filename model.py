@@ -142,10 +142,13 @@ class MHRN(torch.nn.Module):
         self.relation_embedding = torch.nn.Embedding(data.relations_num, rel_dim, padding_idx=0)
         filter1_dim = self.in_channels * self.out_1 * 3 * 3
         self.filter1 = torch.nn.Embedding(data.relations_num, filter1_dim, padding_idx=0)
+        # self.fc1 = torch.nn.Linear(rel_dim, filter1_dim)
         filter2_dim = self.in_channels * self.out_2 * 3 * 3
         self.filter3 = torch.nn.Embedding(data.relations_num, filter2_dim, padding_idx=0)
+        # self.fc3 = torch.nn.Linear(rel_dim, filter2_dim)
         filter3_dim = self.in_channels * self.out_3 * 1 * 9
         self.filter5 = torch.nn.Embedding(data.relations_num, filter3_dim, padding_idx=0)
+        # self.fc5 = torch.nn.Linear(rel_dim, filter3_dim)
 
         # Group equivariant convolution is associated with the group p4
         self.group_equivariant_conv1 = P4ConvZ2(self.in_channels, self.out_channels, 3, 1, 0)
@@ -246,10 +249,13 @@ class MHRN(torch.nn.Module):
         cross_patt = comb_emb[:, self.cross_patt]
 
         f1 = self.filter1(relation_id)
+        # f1 = self.fc1(rel_emb)
         f1 = f1.reshape(entity.size(0) * self.in_channels * self.out_1, 1, 3, 3)
         f3 = self.filter3(relation_id)
+        # f3 = self.fc3(rel_emb)
         f3 = f3.reshape(entity.size(0) * self.in_channels * self.out_2, 1, 3, 3)
         f5 = self.filter5(relation_id)
+        # f5 = self.fc5(rel_emb)
         f5 = f5.reshape(entity.size(0) * self.in_channels * self.out_3, 1, 1, 9)
 
         # (b, 2, 200)→ (b, 200, 2)→ (b, 1, 20, 20)
