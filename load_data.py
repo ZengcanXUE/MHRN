@@ -154,7 +154,7 @@ class Data:
 
     # 获取三元组数据
     @staticmethod
-    def load_data(data_dir, data_type, reverse=False):
+    def load_data(data_dir, data_type, reverse=True):
         with open("%s%s.txt" % (data_dir, data_type), "r", encoding='utf-8') as f:
             # , encoding='utf-8'
             # strip()：方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。
